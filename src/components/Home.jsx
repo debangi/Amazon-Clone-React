@@ -14,14 +14,14 @@ function Home() {
       <div className='home__row'>
         <Product
           id='12321341'
-          title='RajasthaniKart® Comfort Rajasthani Jaipuri Traditional Sanganeri Print 144 TC 100% Cotton Single Bedsheet with 1 Pillow Covers'
+          title='100% Cotton Single Bedsheet with 1 Pillow Covers'
           price={262.0}
           rating={5}
           image='https://images-eu.ssl-images-amazon.com/images/I/61cjm2JOKRL._SY300_SX300_QL70_FMwebp_.jpg'
         />
         <Product
           id='12321342'
-          title='Youth Roller Skates for Women Men Graffiti Freestyle Quad Rink Skate Shoes'
+          title='Youth Roller Skates for Women Men'
           price={262.0}
           rating={5}
           image='https://m.media-amazon.com/images/I/517uu8TMFkL._SX425_.jpg'
@@ -44,7 +44,7 @@ function Home() {
         />
         <Product
           id='12321345'
-          title='Home Gym Multiple Muscle Workout Exercise Machine'
+          title='Muscle Workout Exercise Machine'
           price={262.0}
           rating={5}
           image='https://m.media-amazon.com/images/I/31cv8vTznzL._SY450_.jpg'
@@ -53,7 +53,7 @@ function Home() {
       <div className='home__row'>
         <Product
           id='12321346'
-          title='Jaspo Dragon Fire Fiber Skateboard Combo (26.5 X 6.5) ( for Age Group 7 Years and Above)'
+          title='Jaspo Dragon Fire Fiber Skateboard Combo '
           price={262.0}
           rating={5}
           image='https://images-eu.ssl-images-amazon.com/images/I/419mCXLn3xL._SX300_SY300_QL70_FMwebp_.jpg'

@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
-import './Product.css';
 import { StateContext } from './StateProvider';
+import './Product.css';
 
 function Product({ id, title, image, price, rating }) {
   const { addToCart } = useContext(StateContext);

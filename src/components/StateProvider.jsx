@@ -20,9 +20,13 @@ export const StateProvider = ({ children }) => {
         rating,
       },
     });
-    console.log(title);
   };
-  const removeFromCart = () => {};
+  const removeFromCart = (id) => {
+    dispatch({
+      type: 'REMOVE_FROM_CART',
+      id: id,
+    });
+  };
 
   const value = { cart, addToCart, removeFromCart };
 
