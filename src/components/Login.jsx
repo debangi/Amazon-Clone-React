@@ -37,15 +37,11 @@ function Login() {
     e.preventDefault();
     try {
       const user = await createUserWithEmailAndPassword(auth, email, password);
-      // updateProfile(auth.currentUser, {
-      //   displayName: username,
-      // }).then(() => {
-      //   setCurrentLoggedInUser(user);
-      // });
+
       setCurrentLoggedInUser(user);
       setEmail('');
       setPassword('');
-      // setUsername('');
+      navigate('/');
     } catch (e) {
       alert(e.message);
     }
