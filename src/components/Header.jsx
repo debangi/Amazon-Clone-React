@@ -7,7 +7,6 @@ import { StateContext } from './StateProvider';
 
 function Header() {
   const { cart } = useContext(StateContext);
-  console.log(cart);
   return (
     <Fragment>
       <nav className='header'>
