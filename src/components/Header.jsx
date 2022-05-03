@@ -4,9 +4,17 @@ import SearchIcon from '@mui/icons-material/Search';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import './Header.css';
 import { StateContext } from './StateProvider';
+import { auth } from '../firebase-config';
+import { signOut } from 'firebase/auth';
 
 function Header() {
-  const { cart } = useContext(StateContext);
+  const { cart, user } = useContext(StateContext);
+  const handleAuthenticaton = async () => {
+    if (user) {
+      await signOut(auth);
+    }
+  };
+
   return (
     <Fragment>
       <nav className='header'>
@@ -23,10 +31,14 @@ function Header() {
         </div>
         {/* 3 links */}
         <div className='header__nav'>
-          <Link className='header__link' to='/login'>
-            <div className='header__option'>
-              <span className='header__optionLineOne'>Hello,</span>
-              <span className='header__optionLineTwo'>Sign In</span>
+          <Link className='header__link' to={!user && '/login'}>
+            <div className='header__option' onClick={handleAuthenticaton}>
+              <span className='header__optionLineOne'>
+                Hello {!user ? 'Guest' : user.email}
+              </span>
+              <span className='header__optionLineTwo'>
+                {user ? 'Sign Out' : 'Sign In'}
+              </span>
             </div>
           </Link>
           <Link className='header__link' to='/'>

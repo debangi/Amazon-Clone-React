@@ -1,13 +1,16 @@
 import { createContext, useReducer } from 'react';
-import cartReducer, { initialState } from './reducer';
+import reducer, { initialState } from './reducer';
 
 export const StateContext = createContext({
   cart: [],
+  user: null,
   addToCart: () => {},
   removeFromCart: () => {},
+  addCurrentUser: () => {},
+  removeCurrentUser: () => {},
 });
 export const StateProvider = ({ children }) => {
-  const [{ cart }, dispatch] = useReducer(cartReducer, initialState);
+  const [{ cart, user }, dispatch] = useReducer(reducer, initialState);
 
   const addToCart = (id, title, image, price, rating) => {
     dispatch({
@@ -27,8 +30,27 @@ export const StateProvider = ({ children }) => {
       id: id,
     });
   };
+  const addCurrentUser = (user) => {
+    dispatch({
+      type: 'SET_USER',
+      user: user,
+    });
+  };
+  const removeCurrentUser = () => {
+    dispatch({
+      type: 'SET_USER',
+      user: null,
+    });
+  };
 
-  const value = { cart, addToCart, removeFromCart };
+  const value = {
+    cart,
+    addToCart,
+    removeFromCart,
+    addCurrentUser,
+    removeCurrentUser,
+    user,
+  };
 
   return (
     <StateContext.Provider value={value}>{children}</StateContext.Provider>
