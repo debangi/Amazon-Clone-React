@@ -1,10 +1,13 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useContext } from 'react';
 import { Link, Outlet } from 'react-router-dom';
 import SearchIcon from '@mui/icons-material/Search';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import './Header.css';
+import { StateContext } from './StateProvider';
 
 function Header() {
+  const { cart } = useContext(StateContext);
+  console.log(cart);
   return (
     <Fragment>
       <nav className='header'>
@@ -39,10 +42,12 @@ function Header() {
               <span className='header__optionLineTwo'>Prime</span>
             </div>
           </Link>
-          <Link to='/checkout' className='header__link'>
+          <Link className='header__link' to='/checkout'>
             <div className='header__optionCart'>
               <ShoppingCartIcon />
-              <span className='header__optionLineTwo header__cartCount'>0</span>
+              <span className='header__optionLineTwo header__cartCount'>
+                {cart?.length}
+              </span>
             </div>
           </Link>
         </div>

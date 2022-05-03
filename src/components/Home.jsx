@@ -30,7 +30,7 @@ function Home() {
       <div className='home__row'>
         <Product
           id='12321343'
-          title='Blastoise Telescopes for Kids Beginners Space Astronomic Telescope 70mm Portable Astronomical Telescope with Star Finder Tripod Mobile Phone Holder and Backpack Perfect for Kids/Children/Teens'
+          title='Blastoise Telescopes for Kids '
           price={262.0}
           rating={5}
           image='https://m.media-amazon.com/images/I/71RAZUYibzL._SY355_.jpg'
@@ -44,7 +44,7 @@ function Home() {
         />
         <Product
           id='12321345'
-          title='Lifeline Fitness Multi Home Gym Multiple Muscle Workout Exercise Machine Chest Biceps Shoulder Back Triceps Legs for Men at Home, 72kg Weight Stack, Made in India'
+          title='Home Gym Multiple Muscle Workout Exercise Machine'
           price={262.0}
           rating={5}
           image='https://m.media-amazon.com/images/I/31cv8vTznzL._SY450_.jpg'

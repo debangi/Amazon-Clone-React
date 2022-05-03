@@ -1,7 +1,10 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import './Product.css';
+import { StateContext } from './StateProvider';
 
 function Product({ id, title, image, price, rating }) {
+  const { addToCart } = useContext(StateContext);
+
   return (
     <div className='product'>
       <div className='product__info'>
@@ -19,7 +22,9 @@ function Product({ id, title, image, price, rating }) {
         </div>
       </div>
       <img className='product__image' src={image} alt='' />
-      <button>Add to Cart</button>
+      <button onClick={() => addToCart(id, title, image, price, rating)}>
+        Add to Cart
+      </button>
     </div>
   );
 }
