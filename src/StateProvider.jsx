@@ -9,6 +9,7 @@ export const StateContext = createContext({
   addCurrentUser: () => {},
   removeCurrentUser: () => {},
 });
+
 export const StateProvider = ({ children }) => {
   const [{ cart, user }, dispatch] = useReducer(reducer, initialState);
 
